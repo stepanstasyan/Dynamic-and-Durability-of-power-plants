@@ -128,5 +128,5 @@ ax0.xaxis.set_major_formatter(ticker.FixedFormatter(labelsx))
 ax0.yaxis.set_major_locator(ticker.FixedLocator(positionsy))
 ax0.yaxis.set_major_formatter(ticker.FixedFormatter(labelsy))
 #
-plt.savefig('6Лаб график', dpi=300)
+plt.savefig('6 Лаб график', dpi=300)
 plt.show()
