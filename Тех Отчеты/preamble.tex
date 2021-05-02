@@ -1,0 +1,140 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\setlength{\parindent}{1.25cm}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, % make the links colored
+    linkcolor=black, % color TOC links in blue
+    urlcolor=red, % color URLs in red
+    linktoc=all % 'all' will create links for everything in the TOC
+}
+\usepackage{mathtext}
+\usepackage[T2A]{fontenc}  % поддержка кириллицы в ЛаТеХ
+\usepackage[utf8]{inputenc} % кодировка
+\usepackage[english, russian]{babel} % определение языков в документе
+% \usepackage{pscyr} % красивые кириллические шриф ты
+% \usepackage{mathspec}
+% \usepackage{upgreek} % добавляет прямые греческие символы
+\usepackage[eulergreek, italic]{mathastext}
+% \usepackage{lscape} % для включения альбомных страниц (широкие таблицы, графики и т.д.)
+
+% \usepackage{nath}
+
+\usepackage{amsmath} % многострочные формулы
+% \usepackage{breqn}  % автоматические многострочные формулы
+\usepackage{amstext} % определяет \textit{} для включения в формулы текста
+\usepackage{amssymb} % набор символов
+% \usepackage{makecell} % работа с ячейками в таблицах
+% \usepackage[math-style=upright]{unicode-math}
+\usepackage{indentfirst}  % делает отступ в начале параграфа
+
+% \usepackage{lmodern}
+% \usepackage{listings} % для листингов программ
+\usepackage{pdflscape} % альбомные страницы
+
+\usepackage{longtable} % для многостраничных таблиц
+\usepackage{multirow}  % для объединения ячеек таблиц
+\usepackage{multicol}  % для объединения ячеек таблиц
+
+\usepackage{mathtools}
+% \usepackage{makeidx}
+% \usepackage{amssymb}
+% \usepackage{amsfonts}
+\usepackage{cite}
+% \usepackage{hyperref}
+
+\usepackage{enumerate} % нумерация списков
+\usepackage{enumitem}
+
+% \usepackage{txfonts}
+% \usepackage{kpfonts}
+
+% \usepackage{float}
+% \usepackage{mathdots}
+% \usepackage{pdflscape}
+\usepackage{array}
+
+\pagestyle{empty}
+
+% \usepackage{ltxtable}
+% \usepackage{lipsum}
+
+\usepackage{geometry} % размеры листа
+\geometry{left = 3cm} % размеры листа
+\geometry{right = 2cm} % размеры листа
+\geometry{top = 2cm} % размеры листа
+\geometry{bottom = 2cm} % размеры листа
+
+\usepackage[figurename=Рисунок]{caption}
+\usepackage{subcaption}
+
+\DeclareCaptionLabelFormat{continued}{Продолжение таблицы~#2}
+\DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+\DeclareCaptionLabelSeparator{gost}{~---~}
+
+\captionsetup[figure]{justification = centering}
+\captionsetup{labelsep=gost}
+\captionsetup*[figure]{labelformat=gostfigure}
+
+\usepackage{graphicx}
+% \setlength\extrarowheight{6pt}
+
+\renewcommand{\rmdefault}{ftm} % переключение на общий шрифт документа Times New Roman (пакет pscyr)
+%\renewcommand\theadfont{\normalsize}
+
+\linespread{1.3}
+
+\frenchspacing
+
+% \usepackage{tikz}
+% \usetikzlibrary{shapes.geometric, arrows}
+% \usetikzlibrary{automata,positioning}
+
+
+\usepackage{titlesec}
+
+% Настройка формата разделов и подразделов
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Настройка расстояния до разделов и подразделов и после
+\titlespacing*{\section}{\parindent}{0pt}{18pt}
+\titlespacing*{\subsection}{\parindent}{18pt}{18pt}
+\titlespacing*{\subsubsection}{\parindent}{18pt}{18pt}
+
+% Каждый раздел с новой страницы
+\newcommand{\sectionbreak}{\clearpage}
+
+% \addto\captionsenglish{
+% \renewcommand\contentsname{СОДЕРЖАНИЕ}
+% }
+\addto\captionsrussian{
+    \renewcommand\contentsname{\hfill СОДЕРЖАНИЕ\hfill}
+}
+
+%\usepackage{accsupp}
+
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{1}{1.5em}{2.3em}}
+% \newcommand\cdot {\copyable}{%
+%   \begingroup
+%   \@sanitize
+%   \catcode`\%=14 % allow % as comment char, also needed for \%
+%   \@copyable
+% }
+% \newcommand\cdot {\@copyable}[1]{%
+%   \endgroup
+%   \BeginAccSupp{%
+%     ActualText=\detokenize{#1},%
+%     method=escape,
+%   }%
+%   \scantokens{#1}%
+%   \EndAccSupp{}%
+% }
+\makeatother

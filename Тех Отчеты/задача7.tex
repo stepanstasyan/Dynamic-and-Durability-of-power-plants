@@ -1,0 +1,133 @@
+\input{preamble.tex}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+Министерство образования и науки Российской Федерации\\
+Федеральное государственное автономного образовательное учреждение высшего образования\\
+\hrulefill\\
+\vspace{0.5cm}
+САНКТ-ПЕТЕРБУРГСКИЙ ПОЛИТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ\\ ПЕТРА ВЕЛИКОГО\\
+\vspace{0.5cm}
+Институт Энергетики\\
+Высшая школа энергетического машиностроения\\
+
+\end{center}
+
+\vspace{5cm}
+\begin{center}
+\begin{large}
+Лабораторная работа №2\\
+"Определение частот собственных колебаний вращающегося диска"
+\end{large}
+\end{center}
+
+\vspace{5cm}
+\hspace{5cm} Студент гр. 3231303/81001 \hrulefill Степанов С.С.
+
+
+\vspace{0.5cm}
+\hspace{5cm} Преподаватель \hrulefill Курнухин А.А. \\
+
+
+\vfill
+\begin{center}
+Санкт-Петербург\\
+2021
+\end{center}
+
+
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Исходные данные}
+
+\(l = 1,24\ м;\)
+
+\(b = 122\ мм;\)
+
+\(\delta = 32\ мм;\) \(\ \)
+
+\[h = 36\ мм;\]
+
+\[\rho = 7800\ \frac{кг}{м^{3}};\]
+
+\[Е = 2*10^{11}\ Па\]
+
+n = 3000 об/мин = 50 Гц
+
+\[\frac{d}{l} = 3,7\]
+
+1) Определить частоту крутильных колебаний рабочей лопатки
+
+\[\frac{\partial}{\partial x}\left\lbrack \text{Gk}\frac{\partial\varphi}{\partial x} \right\rbrack - \rho Y_{p}\frac{\partial^{2}\varphi}{\partial\tau^{2}} = 0\]
+
+\[\varphi_{n}\left( x,\tau \right) = \Phi_{n}(x)T_{n}\left( \tau \right)\]
+
+\[Gk\cdot\Phi^{''}T - \rho Y_{p}\Phi\ddot{T} = 0\]
+
+\[\frac{\text{Gk}}{\rho Y_{p}}\frac{\Phi''}{\Phi} = \frac{\ddot{T}}{T} = - \lambda^{2}\]
+
+\[T = N_{\varphi}cos(\lambda\tau - \alpha)\]
+
+\[\Phi^{''} + k^{2}\Phi = 0,\ где\ k^{2} = \frac{\lambda^{2}\rho Y_{p}}{\text{Gk}}\]
+
+\[\Phi\left( x \right) = C_{1}\sin{kx + C_{2}\cos\text{kx}}\]
+
+Граничные условия:
+
+\[x = 0 \Rightarrow \varphi = 0;\ \Phi\left( 0 \right) = 0 \Rightarrow C_{2} = 0\]
+
+\[x = l,\ M = Gk\frac{\partial\varphi}{\partial x} = GkT\Phi^{'} = 0;\ \Phi^{'}\left( l \right) = 0 \Rightarrow C_{1}\cos{kl = 0}\]
+
+\[C_{1} \neq 0 \Rightarrow kl = 0\]
+
+\(k_{n}l = (2n - 1)\frac{\pi}{2}\) при n\(\  \in N\)
+
+\[\lambda_{n} = k_{n}\sqrt{\frac{\text{GK}}{\rho Y_{p}}}\]
+
+\[f_{1кр} = \frac{\lambda_{1}}{2\pi} = \frac{1}{4l}\sqrt{\frac{\text{GK}}{\rho Y_{p}}}\]
+
+\[k = \frac{0,162b\delta^{3}}{1 + 1,43\left( \frac{\delta}{b} \right)^{2} + 2,87\left( \frac{h}{b} \right)^{2}} = \frac{0,162*122{*32}^{3}}{1 + 1,43\left( \frac{32}{122} \right)^{2} + 2,87\left( \frac{36}{122} \right)^{2}} = 0,48*10^{- 6}\ м^{4}\]
+
+\[Y_{p} = 0,038\delta b^{3} + 0,04b\delta\left( \delta^{2} + h^{2} \right) = 0,038*32*122^{3} + 0,04*122*32*\left( 32^{2} + 36^{2} \right) = 2,57*10^{- 6}\ м^{4}\]
+
+\[f_{1кр} = \frac{1}{4*1,24}\sqrt{\frac{7,93*10^{10}*0,48*10^{- 6}}{7800*2,57*10^{- 6}}} = 275,6\ Гц\]
+
+\[f_{2кр} = 3f_{1кр} = 3*275,6 = 826,8\ Гц\]
+
+\[f_{3кр} = 5f_{1кр} = 5*275,6 = 1377,98\ Гц\]
+
+\[\Phi_{n}(x) = C_{1n}\sin k_{n}x\]
+
+\[C_{1n} = \sqrt{\frac{2}{\rho Y_{p}l}} = \sqrt{\frac{2}{7800*2,57*10^{- 6}*1,24}} = 8,97\]
+
+\[k_{n1} = \left( 2n - 1 \right)\frac{\pi}{2} = \left( 2*1 - 1 \right)*\frac{3,14}{2} = 1,571\]
+
+\[k_{n2} = 4,712\]
+
+\[k_{n3} = 7,854\]
+
+Данные для построения форм крутильных колебаний:
+
+\begin{longtable}{@{}lllll@{}}
+& x & \(\Phi_{1}(x)\) & \(\Phi_{2}(x)\) & \(\Phi_{3}(x)\)\\
+0 & 0 & 0 & 0 & 0\\
+0,1 & 0,115 & 1,612 & 4,627 & 7,046\\
+0,2 & 0,23 & 3,17 & 7,927 & 8,722\\
+0,3 & 0,345 & 4,627 & 8,956 & 3,755\\
+0,4 & 0,46 & 5,932 & 7,419 & -4,072\\
+0,5 & 0,575 & 7,046 & 3,755 & -8,797\\
+0,6 & 0,69 & 7,927 & -0,984 & -6,821\\
+0,7 & 0,805 & 8,552 & -5,442 & 0,352\\
+0,8 & 0,92 & 8,899 & -8,34 & 7,257\\
+0,9 & 1,035 & 8,956 & -8,849 & 8,634\\
+1 & 1,15 & 8,722 & -6,821 & 3,433\\
+\end{longtable}
+
+\end{document}
